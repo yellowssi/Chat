@@ -2,7 +2,7 @@
 // Created by yellowsea on 10/29/18.
 //
 
-#include <include/communication.h>
+#include "include/communication.h"
 
 Communication::Communication(User* user, char* address) {
     cli_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
