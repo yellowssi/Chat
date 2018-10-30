@@ -1,0 +1,3 @@
+[submodule "lib/cryptopp"]
+	path = lib/cryptopp
+	url = https://github.com/yellowssi/cryptopp.git
