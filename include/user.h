@@ -1,6 +1,11 @@
 //
 // Created by yellowsea on 10/29/18.
 //
+
+#ifndef CHAT_USER_H
+#define CHAT_USER_H
+
+
 #include <string>
 #include "lib/cryptopp/oids.h"
 #include "lib/cryptopp/osrng.h"
@@ -8,9 +13,6 @@
 
 using namespace std;
 using namespace CryptoPP;
-
-#ifndef CHAT_USER_H
-#define CHAT_USER_H
 
 class User {
 public:
@@ -36,5 +38,6 @@ private:
     void generateECDSAKeyPair();
     void generateECDHKeyPair();
 };
+
 
 #endif //CHAT_USER_H

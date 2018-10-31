@@ -16,6 +16,10 @@ Communication::Communication(User* user, char* address) {
     }
 }
 
+Communication::~Communication() {
+    close(cli_socket);
+}
+
 void Communication::generateSharedKey(User user, SecByteBlock *publicKey) {
     ECDH<ECP>::Domain domain = *user.getECDHDomain();
     *sharedKey = SecByteBlock(domain.AgreedValueLength());

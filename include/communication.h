@@ -1,9 +1,15 @@
 //
 // Created by yellowsea on 10/29/18.
 //
+
+#ifndef CHAT_COMMUNICATION_H
+#define CHAT_COMMUNICATION_H
+
+
 #include <string>
 #include <sys/socket.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 #include "lib/cryptopp/eccrypto.h"
 #include "lib/cryptopp/osrng.h"
 #include "lib/cryptopp/oids.h"
@@ -12,13 +18,10 @@
 using namespace std;
 using namespace CryptoPP;
 
-#ifndef CHAT_COMMUNICATION_H
-#define CHAT_COMMUNICATION_H
-
-
 class Communication {
 public:
     Communication(User* user, char* address);
+    ~Communication();
 private:
     int cli_socket;
     ECDSA<ECP, SHA256>::Signer* signer;

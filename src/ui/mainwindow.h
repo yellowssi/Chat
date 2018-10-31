@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtNetwork/QTcpServer>
 
 namespace Ui {
 class MainWindow;
@@ -13,10 +14,14 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
+
+public slots:
+    void sendMessage();
 
 private:
     Ui::MainWindow *ui;
+    QTcpServer *tcpServer;
 };
 
 #endif // MAINWINDOW_H
